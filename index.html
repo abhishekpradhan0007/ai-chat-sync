@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — AI Chat Sync</title>
+<meta name="description" content="Privacy policy for the AI Chat Sync Chrome extension. No data collection, no server, no telemetry.">
+<style>
+:root{--bg:#fff;--surface:#f7f8fa;--line:#e4e7ec;--text:#12151a;--dim:#5b6472;--accent:#2b6cb0}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--surface:#161920;--line:#262b35;--text:#e8eaee;--dim:#8b94a3;--accent:#6aa5ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+ font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 90px}
+h1{font-size:32px;letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--dim);margin:0 0 40px;font-size:15px}
+h2{font-size:19px;letter-spacing:-.01em;margin:38px 0 12px}
+p,li{color:var(--text)}
+p{margin:0 0 14px}
+ul{padding-left:20px;margin:0 0 14px}
+li{margin-bottom:7px}
+.callout{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 28px}
+.callout p:last-child{margin:0}
+code{background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:4px;
+ font:13px ui-monospace,SFMono-Regular,Menlo,monospace}
+table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+a{color:var(--accent)}
+footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Privacy Policy</h1>
+<p class="sub">AI Chat Sync — Chrome extension · Last updated 22 August 2026</p>
+
+<div class="callout">
+<p><strong>AI Chat Sync does not collect, transmit, store, or sell any of your data.</strong>
+Everything the extension reads stays on your own computer, in a folder you choose.
+There is no server to send it to.</p>
+</div>
+
+<h2>What the extension accesses</h2>
+<p>To do its job, AI Chat Sync reads conversations on AI chat sites you are already signed
+in to and already viewing:</p>
+<ul>
+<li>claude.ai</li>
+<li>chatgpt.com and chat.openai.com</li>
+<li>grok.com</li>
+<li>gemini.google.com</li>
+<li>chat.deepseek.com</li>
+<li>www.perplexity.ai</li>
+<li>copilot.microsoft.com</li>
+<li>chat.mistral.ai</li>
+<li>chat.qwen.ai</li>
+<li>www.meta.ai</li>
+</ul>
+<p>It reads conversation text, titles and timestamps, and on Claude also artifacts, file
+attachments and project documents.</p>
+
+<h2>Where that data goes</h2>
+<p><strong>Only to a folder on your own computer that you explicitly select.</strong>
+The extension uses the browser's File System Access API, which means:</p>
+<ul>
+<li>It cannot see or touch any folder other than the one you picked.</li>
+<li>You grant that access yourself, once, through Chrome's own folder picker.</li>
+<li>You can revoke it at any time.</li>
+</ul>
+
+<h2>What we do not do</h2>
+<ul>
+<li>We do <strong>not</strong> operate a server. There is nowhere for your data to be sent.</li>
+<li>We do <strong>not</strong> collect analytics, telemetry, crash reports or usage statistics.</li>
+<li>We do <strong>not</strong> transmit your conversations to the developer or any third party.</li>
+<li>We do <strong>not</strong> sell, rent or share data with anyone.</li>
+<li>We do <strong>not</strong> use your data for advertising or to train any model.</li>
+</ul>
+
+<h2>Network requests</h2>
+<p>AI Chat Sync makes network requests <strong>only to the AI provider whose page you are
+currently viewing</strong>, using your existing browser session, in order to read your own
+conversations. On claude.ai it calls claude.ai's own endpoints, and so on.</p>
+<p>No request is ever made to any other host. This is enforced technically, not merely
+promised: the extension's pages declare <code>connect-src 'none'</code> in their Content
+Security Policy, which instructs Chrome to block outbound connections from them at the
+browser level.</p>
+
+<h2>Permissions and why they are needed</h2>
+<table>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td><code>storage</code></td><td>Remember your settings and which conversations were already saved, so unchanged chats are not rewritten.</td></tr>
+<tr><td><code>alarms</code></td><td>Run the periodic background sync at your chosen interval.</td></tr>
+<tr><td><code>tabs</code></td><td>Identify which of your open tabs are AI chat pages that need syncing.</td></tr>
+<tr><td><code>scripting</code></td><td>Read the conversation from the page.</td></tr>
+<tr><td><code>offscreen</code></td><td>Hold the folder handle and write files to disk. Chrome service workers cannot do this themselves.</td></tr>
+<tr><td><code>activeTab</code></td><td>Sync the conversation in the tab you are currently viewing.</td></tr>
+<tr><td>Host access to the chat sites listed above</td><td>Read your own conversations on those sites, and nothing else.</td></tr>
+</table>
+
+<h2>Data retention</h2>
+<p>The extension keeps a small local record of which conversations have been synced (an ID
+and a content hash) so it can skip unchanged chats. This lives in Chrome's local extension
+storage on your machine and is deleted when you uninstall the extension.</p>
+
+<h2>Children</h2>
+<p>AI Chat Sync is not directed at children under 13.</p>
+
+<h2>Changes to this policy</h2>
+<p>Material changes will be reflected in an updated version of the extension and in the
+date at the top of this page.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:abhishekpradhan0007@gmail.com">abhishekpradhan0007@gmail.com</a></p>
+
+<footer>AI Chat Sync — save your Claude, ChatGPT, Grok, Gemini and DeepSeek conversations as Markdown, on your own disk.</footer>
+</div>
+</body>
+</html>
