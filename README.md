@@ -8,5 +8,6 @@ The extension's source code is not published here.
 
 ---
 
-AI Chat Sync saves your Claude, ChatGPT, Grok, Gemini, DeepSeek and other AI
-conversations to your own computer as Markdown — no server, no account, no telemetry.
+AI Chat Sync saves supported Claude, ChatGPT, Grok, Gemini, and Perplexity
+conversations to a folder you choose as linked Markdown. The current version uses no
+publisher-operated server and includes no analytics or telemetry.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — AI Chat Sync</title>
-<meta name="description" content="Privacy policy for the AI Chat Sync Chrome extension. No data collection, no server, no telemetry.">
+<meta name="description" content="Privacy policy for AI Chat Sync, a local-first Chrome extension for saving supported AI chats to Markdown.">
 <style>
 :root{--bg:#fff;--surface:#f7f8fa;--line:#e4e7ec;--text:#12151a;--dim:#5b6472;--accent:#2b6cb0}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--surface:#161920;--line:#262b35;--text:#e8eaee;--dim:#8b94a3;--accent:#6aa5ff}}
@@ -33,87 +33,94 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
 <h1>Privacy Policy</h1>
-<p class="sub">AI Chat Sync — Chrome extension · Last updated 22 August 2026</p>
+<p class="sub">AI Chat Sync — Chrome extension · Last updated 24 August 2026</p>
 
 <div class="callout">
-<p><strong>AI Chat Sync does not collect, transmit, store, or sell any of your data.</strong>
-Everything the extension reads stays on your own computer, in a folder you choose.
-There is no server to send it to.</p>
+<p><strong>AI Chat Sync handles your AI-chat content only to save it as local Markdown and generate navigation files in a folder you choose.</strong> Conversation content is not sent to the developer, an advertising or analytics provider, or a publisher-operated server.</p>
+<p>The extension stores exported files and limited operational information locally on your device, as described below.</p>
 </div>
 
 <h2>What the extension accesses</h2>
-<p>To do its job, AI Chat Sync reads conversations on AI chat sites you are already signed
-in to and already viewing:</p>
+<p>AI Chat Sync works on these supported websites:</p>
 <ul>
-<li>claude.ai</li>
-<li>chatgpt.com and chat.openai.com</li>
-<li>grok.com</li>
-<li>gemini.google.com</li>
-<li>chat.deepseek.com</li>
-<li>www.perplexity.ai</li>
-<li>copilot.microsoft.com</li>
-<li>chat.mistral.ai</li>
-<li>chat.qwen.ai</li>
-<li>www.meta.ai</li>
+<li><code>claude.ai</code></li>
+<li><code>chatgpt.com</code> and <code>chat.openai.com</code></li>
+<li><code>grok.com</code></li>
+<li><code>gemini.google.com</code></li>
+<li><code>www.perplexity.ai</code></li>
 </ul>
-<p>It reads conversation text, titles and timestamps, and on Claude also artifacts, file
-attachments and project documents.</p>
+<p>Depending on the feature you use, the extension may handle the conversation currently open when you select <strong>Sync this conversation</strong>; conversations returned by a full-history backup that you start on ChatGPT, Claude, or Grok; and supported conversations in open tabs when you explicitly enable background sync.</p>
+<p>The information handled may include conversation titles, messages, identifiers, timestamps, source URLs, attachments, generated files, artifacts, citations, generated-image URLs, project instructions, and project document text. Availability varies by provider and by the options you enable.</p>
+<p>The extension uses your existing signed-in browser session to request your conversations from the same provider. It does not ask for or store your provider password. Authentication information needed for a same-provider request is used temporarily and is not included in exported files.</p>
 
-<h2>Where that data goes</h2>
-<p><strong>Only to a folder on your own computer that you explicitly select.</strong>
-The extension uses the browser's File System Access API, which means:</p>
+<h2>How the information is used</h2>
+<p>AI Chat Sync uses the information only to:</p>
 <ul>
-<li>It cannot see or touch any folder other than the one you picked.</li>
-<li>You grant that access yourself, once, through Chrome's own folder picker.</li>
-<li>You can revoke it at any time.</li>
+<li>create or update Markdown, attachment, artifact, and project files in the folder you selected;</li>
+<li>generate a local AI Memory Home, topic hubs, categories, and links between saved notes;</li>
+<li>show sync status and whether a capture was full-history or visible-page only;</li>
+<li>avoid rewriting unchanged conversations and prevent filename collisions;</li>
+<li>maintain recent local activity and error information for troubleshooting; and</li>
+<li>verify a licence locally on your device.</li>
 </ul>
+<p>The information is not used for advertising, profiling, credit decisions, model training, or any purpose unrelated to the extension's user-facing chat-export and local-memory features.</p>
 
-<h2>What we do not do</h2>
+<h2>Where information is stored</h2>
+<h3>Your selected folder</h3>
+<p>Conversation exports and generated navigation pages are written under <code>AI Chats/</code> in the folder you select. Chrome's folder picker grants the extension read/write access to the selected folder. The current version uses that access to create and update its own exported files and to remove obsolete topic-hub files generated by the extension. It does not scan unrelated files in your vault.</p>
+<p>The extension cannot access folders outside the folder you select through the picker. You can revoke the folder permission or choose a different folder.</p>
+
+<h3>Local browser storage</h3>
+<p>AI Chat Sync keeps limited operational information on your device, including:</p>
 <ul>
-<li>We do <strong>not</strong> operate a server. There is nowhere for your data to be sent.</li>
-<li>We do <strong>not</strong> collect analytics, telemetry, crash reports or usage statistics.</li>
-<li>We do <strong>not</strong> transmit your conversations to the developer or any third party.</li>
-<li>We do <strong>not</strong> sell, rent or share data with anyone.</li>
-<li>We do <strong>not</strong> use your data for advertising or to train any model.</li>
+<li>extension settings and the background-sync interval;</li>
+<li>conversation identifiers, content hashes, file paths, titles, providers, categories, topics, timestamps, message counts, and capture scope;</li>
+<li>filename ownership, generated-index hashes, and recent sync/error activity;</li>
+<li>the selected-folder permission handle, stored locally by the extension; and</li>
+<li>the locally entered licence key and information embedded in a valid key, which may include an email address, plan, issue time, and order identifier.</li>
 </ul>
+<p>Full conversation message bodies are not copied into Chrome's local extension storage; they are written to the folder you selected.</p>
 
-<h2>Network requests</h2>
-<p>AI Chat Sync makes network requests <strong>only to the AI provider whose page you are
-currently viewing</strong>, using your existing browser session, in order to read your own
-conversations. On claude.ai it calls claude.ai's own endpoints, and so on.</p>
-<p>No request is ever made to any other host. This is enforced technically, not merely
-promised: the extension's pages declare <code>connect-src 'none'</code> in their Content
-Security Policy, which instructs Chrome to block outbound connections from them at the
-browser level.</p>
+<h2>Network requests and sharing</h2>
+<p>AI Chat Sync makes HTTPS requests only to the supported AI provider whose content is being saved, using your existing signed-in browser session. A full-history backup may request multiple conversations from that same provider even when they are not individually open.</p>
+<p>This version does not operate a cloud server and does not transmit conversation content, vault contents, folder handles, operational metadata, or licence keys to the developer. It does not load remote code. Extension pages declare <code>connect-src 'none'</code>; provider requests are made only from the relevant provider's content script and are limited by the manifest's host permissions.</p>
+<p>No user information is sold, rented, or shared with advertising networks, data brokers, analytics providers, or other third parties. The AI providers remain independent third parties and process your signed-in requests under their own terms and privacy policies.</p>
+<p>If you separately use Obsidian Sync, cloud backup, or another folder-sync service, that service may copy files from your selected folder according to your settings and its own privacy policy. AI Chat Sync does not control those services.</p>
 
 <h2>Permissions and why they are needed</h2>
 <table>
-<tr><th>Permission</th><th>Why</th></tr>
-<tr><td><code>storage</code></td><td>Remember your settings and which conversations were already saved, so unchanged chats are not rewritten.</td></tr>
-<tr><td><code>alarms</code></td><td>Run the periodic background sync at your chosen interval.</td></tr>
-<tr><td><code>tabs</code></td><td>Identify which of your open tabs are AI chat pages that need syncing.</td></tr>
-<tr><td><code>scripting</code></td><td>Read the conversation from the page.</td></tr>
-<tr><td><code>offscreen</code></td><td>Hold the folder handle and write files to disk. Chrome service workers cannot do this themselves.</td></tr>
-<tr><td><code>activeTab</code></td><td>Sync the conversation in the tab you are currently viewing.</td></tr>
-<tr><td>Host access to the chat sites listed above</td><td>Read your own conversations on those sites, and nothing else.</td></tr>
+<tr><th>Permission</th><th>Why it is needed</th></tr>
+<tr><td><code>storage</code></td><td>Store local settings, sync metadata, recent activity, and licence state.</td></tr>
+<tr><td><code>alarms</code></td><td>Run background sync at the interval you select.</td></tr>
+<tr><td><code>tabs</code></td><td>Find open supported AI-chat tabs when syncing.</td></tr>
+<tr><td><code>scripting</code></td><td>Attach the conversation reader to a supported tab when needed.</td></tr>
+<tr><td><code>offscreen</code></td><td>Retain the selected-folder handle and perform local file operations that a Chrome service worker cannot perform directly.</td></tr>
+<tr><td><code>activeTab</code></td><td>Sync the conversation in the active tab after your action.</td></tr>
+<tr><td>Host access for the five supported provider domains</td><td>Read your conversations and make same-provider requests needed for the export feature.</td></tr>
 </table>
 
-<h2>Data retention</h2>
-<p>The extension keeps a small local record of which conversations have been synced (an ID
-and a content hash) so it can skip unchanged chats. This lives in Chrome's local extension
-storage on your machine and is deleted when you uninstall the extension.</p>
+<h2>Your choices and data retention</h2>
+<p>Background sync is optional. You can disable it, change its interval, disable optional artifact/file/project export, remove a stored licence, change or revoke folder access, and delete exported files from your folder.</p>
+<p>Chrome-managed local browser storage is normally removed when the extension is uninstalled. Uninstalling AI Chat Sync does not delete files already written to your selected folder. Deleting a conversation at an AI provider also does not automatically delete the corresponding local export.</p>
+<p>AI Chat Sync cannot directly read conversations stored only inside the ChatGPT or Claude desktop applications. A desktop-originated conversation can be included only if the provider makes it available in the same account's web history. Temporary, incognito, or desktop-local sessions that do not appear in web history are not captured by this version.</p>
+
+<h2>Chrome Web Store Limited Use</h2>
+<p>AI Chat Sync uses user information only as necessary to provide and maintain its disclosed chat-export and local-memory features. The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+<h2>Security</h2>
+<p>The extension limits access to the supported provider domains and the folder you explicitly select. Provider requests use HTTPS. Extension pages use a restrictive Content Security Policy and do not load remote scripts.</p>
+<p>No software or local-storage method can be guaranteed completely secure. Avoid exporting confidential conversations unless you understand the risks of storing them as local files and of any separate synchronization service you configure.</p>
 
 <h2>Children</h2>
-<p>AI Chat Sync is not directed at children under 13.</p>
+<p>AI Chat Sync is not directed to children under 13.</p>
 
 <h2>Changes to this policy</h2>
-<p>Material changes will be reflected in an updated version of the extension and in the
-date at the top of this page.</p>
+<p>Material changes will be reflected in an updated policy and a revised date above. If a future version introduces publisher-operated servers or online licence validation, this policy and the Chrome Web Store disclosures will be updated before that version is released.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:abhishekpradhan0007@gmail.com">abhishekpradhan0007@gmail.com</a></p>
+<p>Questions or privacy requests can be sent to <a href="mailto:abhishekpradhan0007@gmail.com">abhishekpradhan0007@gmail.com</a>.</p>
 
-<footer>AI Chat Sync — save your Claude, ChatGPT, Grok, Gemini and DeepSeek conversations as Markdown, on your own disk.</footer>
+<footer>AI Chat Sync — save supported AI conversations as linked Markdown in a folder you choose.</footer>
 </div>
 </body>
 </html>
