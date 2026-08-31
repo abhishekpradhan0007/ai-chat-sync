@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — AI Chat Sync</title>
-<meta name="description" content="Privacy policy for AI Chat Sync, a local-first Chrome extension for saving supported AI chats to Markdown.">
+<title>Privacy Policy — Abe AI Sync</title>
+<meta name="description" content="Privacy policy for Abe AI Sync, a local-first Chrome extension for saving supported AI chats to Markdown.">
 <style>
 :root{--bg:#fff;--surface:#f7f8fa;--line:#e4e7ec;--text:#12151a;--dim:#5b6472;--accent:#2b6cb0}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--surface:#161920;--line:#262b35;--text:#e8eaee;--dim:#8b94a3;--accent:#6aa5ff}}
@@ -27,21 +27,24 @@ table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px}
 th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 a{color:var(--accent)}
+.topnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px;font-size:14px}
+.topnav a{text-decoration:none}.topnav .links{display:flex;gap:18px}
 footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
 </style>
 </head>
 <body>
 <div class="wrap">
+<nav class="topnav"><a href="product/"><strong>Abe AI Sync</strong></a><div class="links"><a href="product/">Product</a><a href="terms/">Terms</a></div></nav>
 <h1>Privacy Policy</h1>
-<p class="sub">AI Chat Sync — Chrome extension · Last updated 24 August 2026</p>
+<p class="sub">Abe AI Sync — Chrome extension · Last updated 31 August 2026</p>
 
 <div class="callout">
-<p><strong>AI Chat Sync handles your AI-chat content only to save it as local Markdown and generate navigation files in a folder you choose.</strong> Conversation content is not sent to the developer, an advertising or analytics provider, or a publisher-operated server.</p>
+<p><strong>Abe AI Sync handles your AI-chat content only to save it as local Markdown and generate navigation files in a folder you choose.</strong> Conversation content is not sent to the developer, an advertising or analytics provider, or a publisher-operated server.</p>
 <p>The extension stores exported files and limited operational information locally on your device, as described below.</p>
 </div>
 
 <h2>What the extension accesses</h2>
-<p>AI Chat Sync works on these supported websites:</p>
+<p>Abe AI Sync works on these supported websites:</p>
 <ul>
 <li><code>claude.ai</code></li>
 <li><code>chatgpt.com</code> and <code>chat.openai.com</code></li>
@@ -54,7 +57,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 <p>The extension uses your existing signed-in browser session to request your conversations from the same provider. It does not ask for or store your provider password. Authentication information needed for a same-provider request is used temporarily and is not included in exported files.</p>
 
 <h2>How the information is used</h2>
-<p>AI Chat Sync uses the information only to:</p>
+<p>Abe AI Sync uses the information only to:</p>
 <ul>
 <li>create or update Markdown, attachment, artifact, and project files in the folder you selected;</li>
 <li>generate a local AI Memory Home, topic hubs, categories, and links between saved notes;</li>
@@ -71,7 +74,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 <p>The extension cannot access folders outside the folder you select through the picker. You can revoke the folder permission or choose a different folder.</p>
 
 <h3>Local browser storage</h3>
-<p>AI Chat Sync keeps limited operational information on your device, including:</p>
+<p>Abe AI Sync keeps limited operational information on your device, including:</p>
 <ul>
 <li>extension settings and the background-sync interval;</li>
 <li>conversation identifiers, content hashes, file paths, titles, providers, categories, topics, timestamps, message counts, and capture scope;</li>
@@ -82,10 +85,10 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 <p>Full conversation message bodies are not copied into Chrome's local extension storage; they are written to the folder you selected.</p>
 
 <h2>Network requests and sharing</h2>
-<p>AI Chat Sync makes HTTPS requests only to the supported AI provider whose content is being saved, using your existing signed-in browser session. A full-history backup may request multiple conversations from that same provider even when they are not individually open.</p>
+<p>Abe AI Sync makes HTTPS requests only to the supported AI provider whose content is being saved, using your existing signed-in browser session. A full-history backup may request multiple conversations from that same provider even when they are not individually open.</p>
 <p>This version does not operate a cloud server and does not transmit conversation content, vault contents, folder handles, operational metadata, or licence keys to the developer. It does not load remote code. Extension pages declare <code>connect-src 'none'</code>; provider requests are made only from the relevant provider's content script and are limited by the manifest's host permissions.</p>
 <p>No user information is sold, rented, or shared with advertising networks, data brokers, analytics providers, or other third parties. The AI providers remain independent third parties and process your signed-in requests under their own terms and privacy policies.</p>
-<p>If you separately use Obsidian Sync, cloud backup, or another folder-sync service, that service may copy files from your selected folder according to your settings and its own privacy policy. AI Chat Sync does not control those services.</p>
+<p>If you separately use Obsidian Sync, cloud backup, or another folder-sync service, that service may copy files from your selected folder according to your settings and its own privacy policy. Abe AI Sync does not control those services.</p>
 
 <h2>Permissions and why they are needed</h2>
 <table>
@@ -101,18 +104,18 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 
 <h2>Your choices and data retention</h2>
 <p>Background sync is optional. You can disable it, change its interval, disable optional artifact/file/project export, remove a stored licence, change or revoke folder access, and delete exported files from your folder.</p>
-<p>Chrome-managed local browser storage is normally removed when the extension is uninstalled. Uninstalling AI Chat Sync does not delete files already written to your selected folder. Deleting a conversation at an AI provider also does not automatically delete the corresponding local export.</p>
-<p>AI Chat Sync cannot directly read conversations stored only inside the ChatGPT or Claude desktop applications. A desktop-originated conversation can be included only if the provider makes it available in the same account's web history. Temporary, incognito, or desktop-local sessions that do not appear in web history are not captured by this version.</p>
+<p>Chrome-managed local browser storage is normally removed when the extension is uninstalled. Uninstalling Abe AI Sync does not delete files already written to your selected folder. Deleting a conversation at an AI provider also does not automatically delete the corresponding local export.</p>
+<p>Abe AI Sync cannot directly read conversations stored only inside the ChatGPT or Claude desktop applications. A desktop-originated conversation can be included only if the provider makes it available in the same account's web history. Temporary, incognito, or desktop-local sessions that do not appear in web history are not captured by this version.</p>
 
 <h2>Chrome Web Store Limited Use</h2>
-<p>AI Chat Sync uses user information only as necessary to provide and maintain its disclosed chat-export and local-memory features. The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+<p>Abe AI Sync uses user information only as necessary to provide and maintain its disclosed chat-export and local-memory features. The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
 
 <h2>Security</h2>
 <p>The extension limits access to the supported provider domains and the folder you explicitly select. Provider requests use HTTPS. Extension pages use a restrictive Content Security Policy and do not load remote scripts.</p>
 <p>No software or local-storage method can be guaranteed completely secure. Avoid exporting confidential conversations unless you understand the risks of storing them as local files and of any separate synchronization service you configure.</p>
 
 <h2>Children</h2>
-<p>AI Chat Sync is not directed to children under 13.</p>
+<p>Abe AI Sync is not directed to children under 13.</p>
 
 <h2>Changes to this policy</h2>
 <p>Material changes will be reflected in an updated policy and a revised date above. If a future version introduces publisher-operated servers or online licence validation, this policy and the Chrome Web Store disclosures will be updated before that version is released.</p>
@@ -120,7 +123,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 <h2>Contact</h2>
 <p>Questions or privacy requests can be sent to <a href="mailto:abhishekpradhan0007@gmail.com">abhishekpradhan0007@gmail.com</a>.</p>
 
-<footer>AI Chat Sync — save supported AI conversations as linked Markdown in a folder you choose.</footer>
+<footer>Abe AI Sync — save supported AI conversations as linked Markdown in a folder you choose.</footer>
 </div>
 </body>
 </html>
