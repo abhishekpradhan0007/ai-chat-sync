@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280, initial-scale=1">
+  <title>Abe AI Sync — Demo frames</title>
+  <link rel="icon" href="../assets/icon-128.png">
+  <style>
+    :root{--ink:#101828;--muted:#667085;--line:#e5e7eb;--paper:#f7f8fa;--night:#111827;--night2:#1b2433;--mint:#74e0c1;--teal:#087f65;--blue:#5b8def;--amber:#f5b94c;--violet:#9b7cff}
+    *{box-sizing:border-box}html,body{margin:0;width:1280px;height:720px;overflow:hidden}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#fff;color:var(--ink);-webkit-font-smoothing:antialiased}.slide{display:none;position:relative;width:1280px;height:720px;padding:52px 62px;background:#fff}.slide.active{display:flex}.brand{position:absolute;top:34px;left:62px;display:flex;align-items:center;gap:11px;font-size:18px;font-weight:750;letter-spacing:-.02em}.brand img{width:34px;height:34px;border-radius:9px;box-shadow:0 8px 20px #10182824}.scene{position:absolute;top:42px;right:62px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.progress{position:absolute;bottom:30px;left:62px;right:62px;display:grid;grid-template-columns:repeat(9,1fr);gap:8px}.progress span{height:4px;border-radius:99px;background:#e7eaf0}.progress span.on{background:var(--teal)}.eyebrow{margin:0 0 14px;color:var(--teal);font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.headline{margin:0;font-size:58px;line-height:.98;letter-spacing:-.055em}.subhead{margin:22px 0 0;color:#475467;font-size:22px;line-height:1.45;max-width:700px}.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#344054;font-size:13px;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}.dark{background:var(--night);color:#fff}.dark .subhead{color:#cbd5e1}.dark .brand{color:#fff}.dark .scene{color:#94a3b8}.dark .progress span{background:#273449}.dark .progress span.on{background:var(--mint)}
+
+    .s1{align-items:center}.s1 .copy{width:54%;padding-top:22px}.s1 .visual{position:absolute;right:72px;top:112px;width:465px;height:462px;border-radius:30px;background:radial-gradient(circle at 52% 46%,#193b42 0,#111827 62%);box-shadow:0 30px 75px #0f172a2b;display:flex;align-items:center;justify-content:center}.orbit{position:absolute;width:330px;height:330px;border:1px solid #ffffff1f;border-radius:50%}.orbit.o2{width:220px;height:220px}.core{z-index:2;text-align:center}.core img{width:88px;height:88px;border-radius:22px;box-shadow:0 0 40px #74e0c166}.core strong{display:block;margin-top:16px;font-size:25px}.core small{display:block;margin-top:6px;color:#93a4ba}.node{position:absolute;z-index:3;padding:10px 14px;border:1px solid #ffffff24;border-radius:12px;background:#162235;color:#e5edf7;font-size:13px;font-weight:700;box-shadow:0 10px 25px #0005}.n1{top:62px;left:44px}.n2{top:74px;right:38px}.n3{bottom:78px;left:32px}.n4{bottom:60px;right:44px}
+
+    .s2{align-items:center}.s2 .left{width:46%;padding-top:24px}.provider-stack{position:absolute;right:72px;top:118px;width:540px;display:grid;gap:14px}.provider-card{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 30px #1018280c}.provider-logo{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--paper);font-size:18px;font-weight:850}.provider-card strong{font-size:17px}.provider-card span{margin-left:auto;color:var(--teal);font-size:13px;font-weight:750}.provider-card small{display:block;margin-top:3px;color:var(--muted);font-size:13px}.provider-strip{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+
+    .s3{padding-top:96px}.chat-window{position:absolute;left:62px;top:104px;width:690px;height:500px;border:1px solid #d0d5dd;border-radius:20px;background:#fff;box-shadow:0 24px 65px #10182818;overflow:hidden}.chat-top{height:58px;padding:0 20px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-weight:750}.chat-body{padding:30px 40px}.bubble{max-width:520px;padding:15px 17px;border-radius:16px;margin-bottom:18px;font-size:15px;line-height:1.45}.bubble.user{margin-left:auto;background:#edf4ff}.bubble.ai{background:#f6f7f9}.popup{position:absolute;right:62px;top:116px;width:400px;height:474px;padding:24px;border-radius:20px;background:#0f141d;color:#fff;box-shadow:0 28px 70px #1018284a}.popup-head{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:800}.popup-head img{width:38px;height:38px;border-radius:10px}.status{margin-top:22px;padding:13px 14px;border-radius:10px;background:#0f3d2b;color:#64e3a3;font-size:14px}.status + .status{margin-top:10px}.primary-btn{margin-top:20px;padding:16px;border-radius:11px;background:#69a3ff;text-align:center;font-weight:800}.secondary-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.secondary-row div{padding:13px;border-radius:10px;background:#202735;text-align:center;color:#d0d5dd}.popup-foot{margin-top:24px;color:#94a3b8;font-size:13px;line-height:1.5}.tap{position:absolute;right:208px;top:406px;width:58px;height:58px;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 5px #5b8def66;animation:none}
+
+    .s4{align-items:center}.s4 .left{width:40%;padding-top:24px}.editor{position:absolute;right:62px;top:96px;width:650px;height:516px;border-radius:20px;background:#10141c;color:#d9e2ee;box-shadow:0 28px 70px #10182835;overflow:hidden}.editor-bar{height:54px;display:flex;align-items:center;gap:9px;padding:0 18px;background:#171d27;border-bottom:1px solid #2a3342}.editor-bar i{width:10px;height:10px;border-radius:50%;background:#ef6b63}.editor-bar i:nth-child(2){background:#f4be4f}.editor-bar i:nth-child(3){background:#62c554}.editor-bar span{margin-left:12px;color:#a9b4c3;font-size:13px}.code{padding:24px 30px;font:14px/1.58 ui-monospace,SFMono-Regular,Menlo,monospace}.code .key{color:#72d3b3}.code .value{color:#e8be79}.code .md{color:#8fb7ff}.checklist{margin-top:28px;display:grid;gap:11px}.check{display:flex;gap:11px;color:#475467}.check b{color:var(--teal)}
+
+    .s5{align-items:center}.memory{position:absolute;left:62px;top:104px;width:770px;height:500px;border:1px solid #d0d5dd;border-radius:22px;background:#fff;box-shadow:0 25px 70px #10182816;overflow:hidden}.memory-side{position:absolute;inset:0 auto 0 0;width:190px;padding:24px;background:#121924;color:#cbd5e1}.memory-side strong{display:block;color:#fff;font-size:17px;margin-bottom:30px}.memory-side span{display:block;padding:9px 0;font-size:13px}.memory-main{margin-left:190px;padding:32px}.memory-main h3{font-size:28px;margin:0 0 6px}.memory-main p{margin:0;color:var(--muted);font-size:13px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.metric{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafbfc}.metric b{display:block;font-size:26px}.metric small{color:var(--muted)}.recent{margin-top:22px}.recent-row{display:flex;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.recent-row b{width:200px}.recent-row span{margin-left:auto;color:var(--muted)}.s5 .right-copy{position:absolute;right:62px;top:176px;width:330px}.s5 .right-copy .headline{font-size:44px}
+
+    .s6{align-items:center}.s6 .copy{width:38%;padding-top:20px}.graph{position:absolute;right:60px;top:90px;width:690px;height:535px;border-radius:28px;background:radial-gradient(circle at 50% 44%,#23404b 0,#111827 66%);box-shadow:0 30px 70px #10182830}.edge{position:absolute;height:2px;background:#74e0c15e;transform-origin:left center}.edge.e1{width:185px;left:240px;top:246px;transform:rotate(-28deg)}.edge.e2{width:195px;left:240px;top:248px;transform:rotate(29deg)}.edge.e3{width:178px;left:365px;top:164px;transform:rotate(52deg)}.edge.e4{width:175px;left:365px;top:340px;transform:rotate(-50deg)}.g-node{position:absolute;display:grid;place-items:center;width:150px;height:66px;border:1px solid #ffffff2e;border-radius:14px;background:#182737;color:#eaf1f7;font-size:14px;font-weight:750;text-align:center;box-shadow:0 14px 28px #0004}.g-node small{display:block;color:#94a3b8;font-weight:500}.g-center{left:215px;top:214px;width:190px;height:78px;background:#163c37;border-color:#74e0c173}.g-a{left:390px;top:86px}.g-b{left:420px;top:350px}.g-c{left:56px;top:115px}.g-d{left:52px;top:356px}.g-e{right:24px;top:218px}
+
+    .s7{align-items:center}.shield{position:absolute;right:100px;top:128px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#143d37 0,#111827 67%);display:grid;place-items:center}.shield-ring{position:absolute;width:300px;height:300px;border:1px solid #74e0c140;border-radius:50%}.shield img{width:98px;height:98px;border-radius:24px;box-shadow:0 0 55px #74e0c16e}.lock{position:absolute;bottom:93px;padding:10px 16px;border:1px solid #74e0c16e;border-radius:999px;background:#112e2b;color:#78e4c6;font-size:13px;font-weight:800}.privacy-list{margin-top:28px;display:grid;gap:14px}.privacy-item{display:flex;align-items:center;gap:13px;color:#cbd5e1}.privacy-item b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#123e33;color:#79e4c4}.s7 .copy{width:52%;padding-top:20px}
+
+    .s8{align-items:center}.s8 .left{width:47%;padding-top:20px}.boundary{position:absolute;right:62px;top:112px;width:520px}.coverage{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 20px 50px #1018280e}.coverage + .coverage{margin-top:18px}.coverage h3{margin:0 0 14px;font-size:19px}.coverage ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}.coverage li{display:flex;gap:10px;color:#475467;font-size:14px}.coverage .yes{color:var(--teal);font-weight:900}.coverage .no{color:#e05252;font-weight:900}.offer{margin-top:24px;display:flex;gap:12px}.offer .pill{padding:10px 14px}
+
+    .s9{align-items:center;justify-content:center;text-align:center}.s9 .center{margin-top:-10px}.s9 .hero-icon{width:100px;height:100px;border-radius:25px;box-shadow:0 20px 45px #1018282f}.s9 .headline{margin-top:26px;font-size:61px}.s9 .subhead{margin:18px auto 0;max-width:760px}.url{display:inline-block;margin-top:28px;padding:14px 19px;border:1px solid #d0d5dd;border-radius:11px;background:#fff;color:#101828;font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace}.review-note{margin-top:18px;color:#94a3b8;font-size:13px}
+  </style>
+</head>
+<body>
+  <section class="slide s1 dark" data-slide="1">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Product demo · 01</div>
+    <div class="copy"><p class="eyebrow">Local-first AI memory for Obsidian</p><h1 class="headline">Your best AI chats should become usable memory.</h1><p class="subhead">Capture supported conversations as Markdown, then turn them into a navigable second brain.</p></div>
+    <div class="visual"><div class="orbit"></div><div class="orbit o2"></div><div class="core"><img src="../assets/icon-128.png" alt=""><strong>Abe AI Sync</strong><small>capture · organize · link</small></div><div class="node n1">ChatGPT</div><div class="node n2">Claude</div><div class="node n3">Gemini</div><div class="node n4">Obsidian Vault</div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s2" data-slide="2">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">The problem · 02</div>
+    <div class="left"><p class="eyebrow">Useful thinking gets buried</p><h1 class="headline">AI histories are scattered. Your knowledge should not be.</h1><p class="subhead">Research, decisions, drafts, and reusable prompts disappear into separate provider histories.</p><div class="provider-strip"><span class="pill"><i class="dot"></i>Supported web conversations</span><span class="pill">No copy-paste workflow</span></div></div>
+    <div class="provider-stack"><div class="provider-card"><div class="provider-logo">C</div><div><strong>ChatGPT</strong><small>Product launch plan</small></div><span>18 messages</span></div><div class="provider-card"><div class="provider-logo">A</div><div><strong>Claude</strong><small>Research synthesis</small></div><span>32 messages</span></div><div class="provider-card"><div class="provider-logo">G</div><div><strong>Gemini</strong><small>Market notes</small></div><span>11 messages</span></div><div class="provider-card"><div class="provider-logo">X</div><div><strong>Grok</strong><small>Competitive scan</small></div><span>21 messages</span></div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s3" data-slide="3">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Capture · 03</div>
+    <div class="chat-window"><div class="chat-top">ChatGPT · Product launch plan</div><div class="chat-body"><div class="bubble user">Turn these launch notes into a focused 30-day plan.</div><div class="bubble ai">Here is a staged plan covering positioning, beta validation, Store readiness, and launch distribution…</div><div class="bubble user">Add clear decision points and success metrics.</div></div></div>
+    <div class="popup"><div class="popup-head"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="status">● Vault connected → AI Chats/</div><div class="status">● Memory Home ready · 51 chats</div><div class="primary-btn">Sync this conversation</div><div class="secondary-row"><div>Back up all</div><div>Diagnostics</div></div><div class="popup-foot">Open a supported conversation, then save it in one click. Optional background sync handles supported conversations in open tabs.</div></div><div class="tap"></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s4" data-slide="4">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Local Markdown · 04</div>
+    <div class="left"><p class="eyebrow">Portable by default</p><h1 class="headline">A readable Markdown note lands in your vault.</h1><p class="subhead">Titles, messages, timestamps, source links, citations, and supported files are preserved when available.</p><div class="checklist"><div class="check"><b>✓</b> Opens in Obsidian or any text editor</div><div class="check"><b>✓</b> Stable filenames and source metadata</div><div class="check"><b>✓</b> Unchanged chats are not rewritten</div></div></div>
+    <div class="editor"><div class="editor-bar"><i></i><i></i><i></i><span>AI Chats/chatgpt/product-launch-plan.md</span></div><div class="code"><span class="key">---</span><br><span class="key">title:</span> <span class="value">"Product launch plan"</span><br><span class="key">provider:</span> <span class="value">chatgpt</span><br><span class="key">source:</span> <span class="value">https://chatgpt.com/c/…</span><br><span class="key">topics:</span> <span class="value">[launch, positioning, beta]</span><br><span class="key">---</span><br><br><span class="md"># Product launch plan</span><br><br><strong>Me</strong><br>Turn these launch notes into a focused 30-day plan.<br><br><strong>Assistant</strong><br>Here is a staged plan covering positioning, beta validation, Store readiness, and launch distribution…<br><br><span class="md">## Related topics</span><br>[[Launch]] · [[Product strategy]] · [[Beta testing]]</div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s5" data-slide="5">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Memory Home · 05</div>
+    <div class="memory"><div class="memory-side"><strong>Obsidian Vault</strong><span>⌂ AI Memory Home</span><span>◇ Topic hubs</span><span>▱ ChatGPT</span><span>▱ Claude</span><span>▱ Gemini</span></div><div class="memory-main"><h3>AI Memory Home</h3><p>Generated locally by Abe AI Sync</p><div class="metrics"><div class="metric"><b>51</b><small>saved chats</small></div><div class="metric"><b>14</b><small>topic hubs</small></div><div class="metric"><b>5</b><small>providers</small></div></div><div class="recent"><div class="recent-row"><b>Product launch plan</b><small>[[Launch]] · [[Beta]]</small><span>ChatGPT</span></div><div class="recent-row"><b>Research synthesis</b><small>[[Research]] · [[AI]]</small><span>Claude</span></div><div class="recent-row"><b>Market notes</b><small>[[Market]] · [[Strategy]]</small><span>Gemini</span></div></div></div></div>
+    <div class="right-copy"><p class="eyebrow">Automatic navigation</p><h1 class="headline">One home for everything worth keeping.</h1><p class="subhead">Recent conversations, providers, and topic counts stay visible in a locally generated index.</p></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s6 dark" data-slide="6">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Backlinks · 06</div>
+    <div class="copy"><p class="eyebrow">From archive to second brain</p><h1 class="headline">Topic hubs connect related conversations automatically.</h1><p class="subhead">Obsidian-compatible wikilinks make ideas discoverable across providers and projects.</p></div>
+    <div class="graph"><div class="edge e1"></div><div class="edge e2"></div><div class="edge e3"></div><div class="edge e4"></div><div class="g-node g-center">[[Product strategy]]<small>12 linked notes</small></div><div class="g-node g-a">Launch plan<small>ChatGPT</small></div><div class="g-node g-b">Market research<small>Gemini</small></div><div class="g-node g-c">Beta findings<small>Claude</small></div><div class="g-node g-d">Competitor scan<small>Grok</small></div><div class="g-node g-e">Customer themes<small>Perplexity</small></div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s7 dark" data-slide="7">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Local-first · 07</div>
+    <div class="copy"><p class="eyebrow">Designed for ownership</p><h1 class="headline">Your chat content stays in the folder you choose.</h1><p class="subhead">Abe AI Sync does not operate a chat-content cloud, load remote code, or include advertising analytics.</p><div class="privacy-list"><div class="privacy-item"><b>✓</b> Chrome's folder picker controls access</div><div class="privacy-item"><b>✓</b> Ordinary Markdown remains portable</div><div class="privacy-item"><b>✓</b> Same-provider requests use the signed-in browser session</div></div></div>
+    <div class="shield"><div class="shield-ring"></div><img src="../assets/icon-128.png" alt=""><div class="lock">LOCAL VAULT</div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s8" data-slide="8">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Coverage & offer · 08</div>
+    <div class="left"><p class="eyebrow">Clear coverage, honest boundaries</p><h1 class="headline">Built for supported web-visible conversations.</h1><p class="subhead">Provider changes can affect capture. Version 1 does not claim access to temporary, incognito, or desktop-only sessions that never reach web history.</p><div class="offer"><span class="pill"><i class="dot"></i>7-day trial</span><span class="pill">$29 one-time founder licence</span><span class="pill">All 1.x updates</span></div></div>
+    <div class="boundary"><div class="coverage"><h3>Supported in version 1</h3><ul><li><span class="yes">✓</span> Open-conversation capture on five supported providers</li><li><span class="yes">✓</span> Full-history backup on ChatGPT, Claude, and Grok</li><li><span class="yes">✓</span> Local Memory Home, topic hubs, and backlinks</li></ul></div><div class="coverage"><h3>Not captured</h3><ul><li><span class="no">×</span> Temporary or incognito conversations</li><li><span class="no">×</span> Codex, ChatGPT Work, Claude Code, or Cowork sessions that never appear on the provider website</li></ul></div></div>
+    <div class="progress"></div>
+  </section>
+
+  <section class="slide s9 dark" data-slide="9">
+    <div class="brand"><img src="../assets/icon-128.png" alt="">Abe AI Sync</div><div class="scene">Learn more · 09</div>
+    <div class="center"><img class="hero-icon" src="../assets/icon-128.png" alt=""><h1 class="headline">Turn scattered AI chats into memory you own.</h1><p class="subhead">Abe AI Sync · Local-first AI memory for Obsidian</p><div class="url">abhishekpradhan0007.github.io/ai-chat-sync/product/</div><div class="review-note">Chrome Web Store draft · Lemon Squeezy onboarding in progress</div></div>
+    <div class="progress"></div>
+  </section>
+
+  <script>
+    const requested = Math.min(9, Math.max(1, Number(new URLSearchParams(location.search).get('slide') || 1)));
+    document.querySelectorAll('.slide').forEach((slide) => {
+      const n = Number(slide.dataset.slide);
+      slide.classList.toggle('active', n === requested);
+      const bar = slide.querySelector('.progress');
+      for (let i = 1; i <= 9; i += 1) {
+        const segment = document.createElement('span');
+        if (i <= n) segment.className = 'on';
+        bar.appendChild(segment);
+      }
+    });
+  </script>
+</body>
+</html>
