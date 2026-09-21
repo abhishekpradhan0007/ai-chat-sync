@@ -86,7 +86,11 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:v
 
 <h2>Network requests and sharing</h2>
 <p>Abe AI Sync makes HTTPS requests only to the supported AI provider whose content is being saved, using your existing signed-in browser session. A full-history backup may request multiple conversations from that same provider even when they are not individually open.</p>
-<p>This version does not operate a cloud server and does not transmit conversation content, vault contents, folder handles, operational metadata, or licence keys to the developer. It does not load remote code. Extension pages declare <code>connect-src 'none'</code>; provider requests are made only from the relevant provider's content script and are limited by the manifest's host permissions.</p>
+<p>This version does not operate a cloud server. It does not transmit conversation content, vault contents, folder handles, or operational metadata anywhere, and it does not load remote code.</p>
+
+<p><strong>One exception, and it is the only one.</strong> When you activate a licence bought through Lemon Squeezy, the extension sends that licence key to <code>api.lemonsqueezy.com</code> to confirm it is genuine, and rechecks it roughly weekly so that refunds and revocations take effect. That request carries the licence key and a device label such as &ldquo;Abe AI Sync on Mac&rdquo; &mdash; and nothing else. No conversation content, no titles, no file paths, and nothing about your vault is included. Licence keys issued directly by us are verified on your own machine and make no request at all.</p>
+
+<p>Extension pages declare a Content Security Policy whose <code>connect-src</code> permits that single licence endpoint and nothing else, so Chrome blocks every other outbound connection from them at the browser level. Provider requests are made only from the relevant provider's content script and are limited by the manifest's host permissions. The free edition ships no licence code and keeps <code>connect-src 'none'</code>.</p>
 <p>No user information is sold, rented, or shared with advertising networks, data brokers, analytics providers, or other third parties. The AI providers remain independent third parties and process your signed-in requests under their own terms and privacy policies.</p>
 <p>If you separately use Obsidian Sync, cloud backup, or another folder-sync service, that service may copy files from your selected folder according to your settings and its own privacy policy. Abe AI Sync does not control those services.</p>
 
